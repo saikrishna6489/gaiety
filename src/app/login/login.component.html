@@ -1,10 +1,10 @@
 <div class="loginforms" data-aos="fade-up" data-aos-duration="2000">
-    <form [formGroup]="Loginform" (ngSubmit)="Login(Loginform.value)" class="form-group">
+    <form [formGroup]="Loginform" (ngSubmit)="loginUser()" class="form-group">
         <h2>login</h2>
-        <input type="email" name="" value="" placeholder="Email" formControlName="email" name="email"
-            class="form-control" [class.is-invalid]="Loginform.get('email').invalid && Loginform.get('email').touched ">
-        <small [class.d-none]="Loginform.get('email').valid || Loginform.get('email').untouched "
-            class="text-danger">Email is requied</small>
+        <input type="text" name="" value="" placeholder="username" formControlName="username" name="username"
+            class="form-control" [class.is-invalid]="Loginform.get('username').invalid && Loginform.get('username').touched ">
+        <small [class.d-none]="Loginform.get('username').valid || Loginform.get('username').untouched "
+            class="text-danger">username is requied</small>
 
 
         <input type="password" name="" value="" placeholder="password" formControlName="password" name="password"

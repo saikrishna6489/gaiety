@@ -67,8 +67,8 @@
 }
 .details{
     float: right;
-    margin-top: 50px;
-    margin-right: 450px;
+    margin-top: 20px;
+    margin-right: 185px;
 }
 .details input[type=text]{
     display: block;
@@ -100,7 +100,6 @@
 }
 
 .details button{
-    margin-top: 80px;
     cursor: pointer;
 }
 .details span{

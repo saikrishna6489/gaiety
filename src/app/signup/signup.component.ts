@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm} from '@angular/forms';
 import * as AOS from 'aos';
-
+import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,18 +14,21 @@ export class SignupComponent implements OnInit {
 
   Signupform:FormGroup;
 
-  constructor(private fb:FormBuilder) { }
+  constructor(
+    private fb:FormBuilder, 
+    private apiService:AuthenticationService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
     AOS.init();
 
     this.Signupform=this.fb.group({
-      UserName:[null, [Validators.required,Validators.minLength(3)]],
-
-      FirstName:[null, [Validators.required,Validators.minLength(3)]],
-      LastName:[null, [Validators.required,Validators.minLength(3)]],
+      username:[null, [Validators.required,Validators.minLength(3)]],
+      first_name:[null, [Validators.required,Validators.minLength(3)]],
+      last_name:[null, [Validators.required,Validators.minLength(3)]],
       email:[null, [Validators.required, Validators.email]],
-      Password:[null, [Validators.required,Validators.minLength(6)]],
+      password:[null, [Validators.required,Validators.minLength(6)]],
 
 
     });
@@ -32,5 +36,17 @@ export class SignupComponent implements OnInit {
   Signup(formData:NgForm){
     console.log(formData);
   }
+
+  saveForm() {
+
+      this.apiService.registerUser(this.Signupform.value).subscribe(
+        result => {
+          this.router.navigate(['/Login']);
+        },
+        error => console.log(error)
+      );
+    
+  }
+
 
 }

@@ -20,8 +20,7 @@ img {
 
 }
 .head_change{
-	background-color: rgb(2, 77, 77,0.4);
-	background-color: black;
+	background-color: rgba(0,0,0,.6);
 	position: fixed;
 	box-shadow: 0 3px 1rem rgba(0,0,0,.1);
 	height: 90px;
@@ -109,7 +108,7 @@ h1 span:nth-child(8){
 .navsec ul li{
 	list-style: none;
 	display: inline-block;
-	margin-left: 40px;
+	margin-left: 20px;
 	
 }
 .navsec ul li a{
@@ -121,7 +120,7 @@ h1 span:nth-child(8){
 
 .navsec button{
 	color: #fff;
-margin-left: 90px;
+margin-left: 40px;
 text-transform: uppercase;
 border: none;
 border-radius: 15px;

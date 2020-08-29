@@ -18,7 +18,7 @@ background-size: cover;
 border-radius: 20px;
 
 }
-.loginforms form input[type=email]{
+.loginforms form input[type=text]{
 margin:2px 3px;
 margin-top: 40px;
 border-radius: 20px;

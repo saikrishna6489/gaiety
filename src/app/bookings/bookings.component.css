@@ -1,5 +1,6 @@
 .bookings{
-    height: 420px;
+    min-height: 420px;
+    height: auto;
     width: 80%;
     background: url(../../assets/images/spects2.jpg) no-repeat;
     background-size: cover;
@@ -9,6 +10,10 @@
 .whole{
     height: 540px;
     background-color: grey;
-
-
 }
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}

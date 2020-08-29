@@ -20,6 +20,17 @@ import { MyaccountComponent } from './myaccount/myaccount.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TripsComponent } from './trips/trips.component';
 import { BookingsComponent } from './bookings/bookings.component';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { RefreshComponent } from './refresh/refresh.component';
+import { BooknowComponent } from './booknow/booknow.component';
+import { FormComponent } from './booknow/form/form.component';
+import { Package1Component } from './booknow/package1/package1.component';
+import { Package2Component } from './booknow/package2/package2.component';
+import { Package3Component } from './booknow/package3/package3.component';
+import { Package4Component } from './booknow/package4/package4.component';
+import { Package5Component } from './booknow/package5/package5.component';
 
 @NgModule({
   declarations: [
@@ -40,14 +51,24 @@ import { BookingsComponent } from './bookings/bookings.component';
     ProfileComponent,
     TripsComponent,
     BookingsComponent,
+    EditprofileComponent,
+    RefreshComponent,
+    BooknowComponent,
+    FormComponent,
+    Package1Component,
+    Package2Component,
+    Package3Component,
+    Package4Component,
+    Package5Component,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [CookieService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

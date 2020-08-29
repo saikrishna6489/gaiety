@@ -1,0 +1,23 @@
+input {
+
+    width: 250px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 2px solid grey;
+
+}
+
+
+.editprofile{
+    margin-top: 120px;
+    width: 60%;
+    margin-top: 0px;
+}
+
+.ss{
+    margin-top: 120px ;
+}
+
+lable{
+    display: inline;
+}

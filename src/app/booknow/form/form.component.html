@@ -1,0 +1,98 @@
+<div class="container-fluid whole">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <form [formGroup]="Packageform" (ngSubmit)="saveForm()" class="form-group">
+
+                <h1>Book Now</h1>
+                <p>Please fill out the form below with appropriate details and we will get back to you within 24 hr.
+                    with a confirmed reservation number. Help us to serve you better.</p>
+
+                <div class="name">
+                    <label>Name:</label> <input [class.is-invalid]="Packageform.get('name').touched &&
+                 Packageform.get('name').invalid" type="text" formControlName="name" name="name"
+                        class="form-control">
+
+                    <div *ngIf="Packageform.get('name').touched && Packageform.get('name').invalid">
+                        <small *ngIf="Packageform.get('name').errors['required']" class="text-danger">name is
+                            required</small>
+
+                        <small *ngIf="Packageform.get('name').errors['minlength']" class="text-danger">name must
+                            be atleast 3 charecters</small>
+                    </div>
+                </div>
+
+                <div class="Mobile">
+                    <label>Mobile:</label>
+                    <input type="text" [class.is-invalid]="Packageform.get('mobile_number').touched
+                 && Packageform.get('mobile_number').invalid" formControlName="mobile_number" name="mobile_number"
+                        class="form-control">
+
+                        <div *ngIf="Packageform.get('mobile_number').touched && Packageform.get('mobile_number').invalid">
+                    <small *ngIf="Packageform.get('mobile_number').errors['pattern']" class="text-danger">Enter valid mobile_number</small>
+                    <small *ngIf="Packageform.get('mobile_number').errors['required']" class="text-danger">mobile_number is
+                        required</small> 
+                        </div>  
+                    
+                </div>
+
+                <div class="Email">
+                    <label>Email:</label><input type="email" name="" value="" formControlName="email" name="email"
+                        class="form-control"
+                        [class.is-invalid]="Packageform.get('email').invalid && Packageform.get('email').touched ">
+                    <small [class.d-none]="Packageform.get('email').valid || Packageform.get('email').untouched "
+                        class="text-danger">Email is requied</small>
+                </div>
+
+                <div class="places">
+                    <label>place of interest:</label>
+                    <select class="form-control" formControlName="place_of_interest" [class.is-invalid]="Packageform.get('place_of_interest').invalid &&
+                    Packageform.get('place_of_interest').touched ">
+                        <option>Papi Hills on river Godavari (one day)</option>
+                        <option>Night stay ( Kolluru/ Telladibbalu ) (2 days)</option>
+                        <option>Bhadrachalam ( river cum road ) (2 days)</option>
+                        <option>Bhadrachalam River cum Road (1 day Package) Dropping</option>
+                        <option>Night stay papi hills to Bhadrachalam (2 days)</option>
+                        <option>Konaseema package - 1 ( pilgrim 1 day)</option>
+                        <option>Konaseema package - 2 ( pilgrim 1 day)</option>
+                        <option>Konaseema package - 3 ( pilgrim 1 day)</option>
+                        <option>A/c Boat Hire Basis</option>
+                    </select>
+                </div>
+
+                <div class="date">
+                    <label>journey_date:</label>
+                    <input type="date" class="form-control" formControlName="journey_date" [class.is-invalid]="Packageform.get('journey_date').invalid &&
+                    Packageform.get('journey_date').touched " >
+                </div>
+
+                <div class="persons">
+                    <label>Passengers:</label>
+                    <input type="text" id="n1" class="form-control" formControlName="adults" [class.is-invalid]="Packageform.get('adults').invalid &&
+                    Packageform.get('adults').touched "  ><label id="a1" >adults</label>
+                    <input type="text" id="n2" class="form-control" formControlName="childs" [class.is-invalid]="Packageform.get('childs').invalid &&
+                    Packageform.get('childs').touched " ><label id="c1">childs</label>
+                </div>
+
+
+                <div class="accom">
+                    <label>Accombidation:</label>
+                    <select class="form-control" >
+                        <option>Required</option>
+                        <option>No Thanks</option>
+
+                    </select>
+                </div>
+
+
+                <div class="message">
+                    <label>Special Instructions:</label>
+                    <textarea name="message" class="form-control"></textarea>
+                </div>
+
+                <input type="submit" class="btn btn-success" [disabled]="!Packageform.valid">
+                <input type="reset" class="btn btn-primary">
+            </form>
+        </div>
+
+    </div>
+</div>

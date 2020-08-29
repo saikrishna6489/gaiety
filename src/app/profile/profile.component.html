@@ -3,28 +3,32 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 profile">
             <div class="picture">
-                <div class="pic" data-aos="fade-up" data-aos-duration="1500"><img src="../../assets/images/avatar.svg"></div>
+                <div *ngFor="let user of users">
+                <div class="pic" data-aos="fade-up" data-aos-duration="1500"><img src="{{user.pic}}"></div>
+                </div>
                 <div class="cam" data-aos="fade-up" data-aos-duration="1500"><i class="fa fa-camera" (click)="toggleDisplay()" ></i>
 
                     <ul *ngIf="isDisplay">
-                        <li><a href="#">update profile picture</a></li>
-                        <li><a href="#">remove profile picture</a></li>
-
+                        <li><input type="file" name="pic" (change)="onImageChanged($event)" class="form-control"></li>
+                        <li><button (click)="newBook()">New Book</button></li>
                     </ul>
                 </div>
             </div>
 
             <div class="details">
 
-                <input type="text" placeholder="Name" required data-aos="fade-up" data-aos-duration="1500">
-                <input type="tel" placeholder="Mobile no" required data-aos="fade-up" data-aos-duration="1500">
-                <input type="email" placeholder="Email" required data-aos="fade-up" data-aos-duration="1500">
-                <p>Gender</p>
-                <input type="radio" name="gender/" data-aos="fade-up" data-aos-duration="1500">Male
-                <input type="radio" name="gender/" data-aos="fade-up" data-aos-duration="1500">Female
-                <button class="btn btn-success" data-aos="fade-up" data-aos-duration="1500">update profile
-                    details</button>
-
+                <div *ngFor="let user of users">
+                    <p><b>Username : </b> {{user.username}}</p>
+                    <p><b>First name : </b> {{user.first_name}}</p>
+                    <p><b>Last name : </b> {{user.last_name}}</p>
+                    <p><b>Email : </b> {{user.email}}</p>
+                    <p><b>Gender : </b> {{user.gender}}</p>
+                    <p><b>Aadhar : </b> {{user.aadhar}}</p>
+                    <p><b>zipcode : </b> {{user.zip_code}}</p>
+                    <p><b>Profile picture : </b> {{user.pic}}</p>
+                </div>
+                <button class="btn btn-success" data-aos="fade-up" 
+                        data-aos-duration="1500" (click)="btnClick();">edit profile details</button>
 
             </div>
 

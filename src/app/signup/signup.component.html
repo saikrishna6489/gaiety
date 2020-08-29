@@ -1,61 +1,65 @@
-<div class="signupforms" data-aos="fade-up" data-aos-duration="2000">
-    <form [formGroup]="Signupform" (ngSubmit)="Signup(Signupform.value)" class="form-group">
-        <h2><b>signup</b></h2>
+<div class="signupforms" data-aos="fade-up"
+data-aos-duration="2000">
+    <form [formGroup]="Signupform" (ngSubmit)="saveForm()" class="form-group">
+    <h2><b>signup</b></h2>
 
-        <input [class.is-invalid]="Signupform.get('UserName').touched && Signupform.get('UserName').invalid" type="text"
-            placeholder="UserName" formControlName="UserName" name="UserName" class="form-control">
+    <input [class.is-invalid]="Signupform.get('username').touched && Signupform.get('username').invalid" type="text"
+    placeholder="username" formControlName="username" name="username" class="form-control">
 
-        <div *ngIf="Signupform.get('UserName').touched && Signupform.get('UserName').invalid">
-            <small *ngIf="Signupform.get('UserName').errors['required']" class="text-danger">UserName is
-                required</small>
+    <div *ngIf="Signupform.get('username').touched && Signupform.get('username').invalid">
+       <small *ngIf="Signupform.get('username').errors['required']"  
+       class="text-danger">username is required</small>
 
-            <small *ngIf="Signupform.get('UserName').errors['minlength']" class="text-danger">UserName must be atleast 3
-                charecters</small>
-        </div>
+       <small *ngIf="Signupform.get('username').errors['minlength']"  
+       class="text-danger">username must be atleast 3 charecters</small>
+   </div>
+    
+
+    <input [class.is-invalid]="Signupform.get('first_name').touched && Signupform.get('first_name').invalid" type="text"
+     placeholder="first_name" formControlName="first_name" name="first_name" class="form-control">
+
+     <div *ngIf="Signupform.get('first_name').touched && Signupform.get('first_name').invalid">
+        <small *ngIf="Signupform.get('first_name').errors['required']"  
+        class="text-danger">first_name is requied</small>
+
+        <small *ngIf="Signupform.get('first_name').errors['minlength']"  
+        class="text-danger">first_name must be atleast 3 charecters</small>
+    </div>
+     
 
 
-        <input [class.is-invalid]="Signupform.get('FirstName').touched && Signupform.get('FirstName').invalid"
-            type="text" placeholder="FirstName" formControlName="FirstName" name="FirstName" class="form-control">
+    <input [class.is-invalid]="Signupform.get('last_name').touched && Signupform.get('last_name').invalid" type="text"
+    placeholder="last_name" formControlName="last_name" name="last_name" class="form-control">
 
-        <div *ngIf="Signupform.get('FirstName').touched && Signupform.get('FirstName').invalid">
-            <small *ngIf="Signupform.get('FirstName').errors['required']" class="text-danger">FirstName is
-                requied</small>
+    <div *ngIf="Signupform.get('last_name').touched && Signupform.get('last_name').invalid">
+       <small *ngIf="Signupform.get('last_name').errors['required']"  
+       class="text-danger">last_name is required</small>
 
-            <small *ngIf="Signupform.get('FirstName').errors['minlength']" class="text-danger">FirstName must be atleast
-                3 charecters</small>
-        </div>
+       <small *ngIf="Signupform.get('last_name').errors['minlength']"  
+       class="text-danger">last_name must be atleast 3 charecters</small>
+   </div>
+    
+   <input type="email" name="" value="" placeholder="Email" formControlName="email" name="email"
+   class="form-control" [class.is-invalid]="Signupform.get('email').invalid && Signupform.get('email').touched ">
+   <small [class.d-none]="Signupform.get('email').valid || Signupform.get('email').untouched " class="text-danger">Email is requied</small>
 
+   <input [class.is-invalid]="Signupform.get('password').touched && Signupform.get('password').invalid" type="password"
+   placeholder="password" formControlName="password" name="password" class="form-control">
 
+   <div *ngIf="Signupform.get('password').touched && Signupform.get('password').invalid">
+      <small *ngIf="Signupform.get('password').errors['required']"  
+      class="text-danger">password is required</small>
 
-        <input [class.is-invalid]="Signupform.get('LastName').touched && Signupform.get('LastName').invalid" type="text"
-            placeholder="LastName" formControlName="LastName" name="LastName" class="form-control">
+      <small *ngIf="Signupform.get('password').errors['minlength']"  
+      class="text-danger">password must be atleast 6 charecters</small>
+  </div>
+    <p>Already have accont?<a routerLink="/Login">Login</a></p>
 
-        <div *ngIf="Signupform.get('LastName').touched && Signupform.get('LastName').invalid">
-            <small *ngIf="Signupform.get('LastName').errors['required']" class="text-danger">LastName is
-                required</small>
-
-            <small *ngIf="Signupform.get('LastName').errors['minlength']" class="text-danger">LastName must be atleast 3
-                charecters</small>
-        </div>
-
-        <input type="email" name="" value="" placeholder="Email" formControlName="email" name="email"
-            class="form-control"
-            [class.is-invalid]="Signupform.get('email').invalid && Signupform.get('email').touched ">
-        <small [class.d-none]="Signupform.get('email').valid || Signupform.get('email').untouched "
-            class="text-danger">Email is requied</small>
-
-        <input [class.is-invalid]="Signupform.get('Password').touched && Signupform.get('Password').invalid"
-            type="Password" placeholder="Password" formControlName="Password" name="Password" class="form-control">
-
-        <div *ngIf="Signupform.get('Password').touched && Signupform.get('Password').invalid">
-            <small *ngIf="Signupform.get('Password').errors['required']" class="text-danger">Password is
-                required</small>
-
-            <small *ngIf="Signupform.get('Password').errors['minlength']" class="text-danger">Password must be atleast 6
-                charecters</small>
-        </div>
-        <p>Already have accont?<a routerLink="/Login">Login</a></p>
-
-        <button class="btn btn-success" [disabled]="!Signupform.valid">signup</button>
+    <button class="btn btn-success" [disabled]="!Signupform.valid">signup</button>
     </form>
-</div>
+    </div>
+
+
+    
+    
+    

@@ -2,7 +2,31 @@
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bookings">
-            <h1>you dont have any bookings yet</h1>
+            <h1>BOOKINGS</h1>
+                <table class="tg">
+                <thead>
+                  <tr>
+                    <th class="tg-0lax">s.no<br></th>
+                    <th class="tg-0lax">name<br></th>
+                    <th class="tg-0lax">place</th>
+                    <th class="tg-0lax">journey date</th>
+                    <th class="tg-0lax">passengers</th>
+                    <th class="tg-0lax">accomidatation</th>
+                    <th class="tg-0lax">details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let booking of bookings">
+                    <td class="tg-0lax">{{ booking.id }}</td>
+                    <td class="tg-0lax">{{ booking.name }}</td>
+                    <td class="tg-0lax">{{ booking.place_of_interest }}</td>
+                    <td class="tg-0lax">{{ booking.journey_date }}</td>
+                    <td class="tg-0lax"><p>childs: {{ booking.childs }}</p><p>adults: {{ booking.adults }}</p></td>
+                    <td class="tg-0lax">{{ booking.accomidation }}</td>
+                    <td class="tg-0lax"><p>ph.no: {{ booking.mobile_number }}</p><p>email: {{ booking.email }}</p><p>instructions: {{ booking.special_instructions }}</p></td>
+                  </tr>
+                </tbody>
+                </table>
         </div>
     </div>
 </div>

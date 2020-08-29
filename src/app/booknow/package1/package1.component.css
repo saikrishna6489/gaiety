@@ -1,0 +1,81 @@
+.one{
+    margin-top: 120px;
+    height: 100%;
+}
+.one h1{
+    color: green;
+    font-size: 20px;
+    border: none;
+    border: 1px solid;
+    width: 100%;
+    background-color: thistle;
+    text-align: center;
+}
+.one img{
+    width: 75%;
+    height: 400px;
+    position: absolute;
+    margin-left: 100px;
+
+}
+.one h6{
+    position: relative;
+    width: 77%;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    text-align: center;
+    margin-top: 369px;
+    font-weight: bold;
+    margin-left: 100px;
+    padding: 10px 0px 10px 0px;
+}
+.price{
+    width: 100%;
+    border-bottom: 1px solid;
+
+}
+.price h3{
+    font-size: 20px;
+    color: white;
+    margin-left: 100px;
+
+}
+
+.price h4{
+    font-size: 25px;
+    color: white;
+    margin-left: 100px;
+    font-weight: 200;
+
+}
+.price h5{
+    font-size: 16px;
+    color: white;
+    margin-left: 100px;
+    font-weight: 100;
+
+}
+.schedule{
+    margin-top: 20px;
+
+}
+.schedule h5{
+    margin-left: 100px;
+    line-height: 25px;
+    color: cornsilk;
+
+}
+.schedule h2{
+    margin-left: 100px;
+    font-weight: 500;
+    font-size: 25px;
+}
+.schedule p{
+    margin-left: 100px;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+.schedule button{
+    margin-left: 40%;
+    margin-bottom: 20px;
+}

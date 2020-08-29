@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoutegaurdService implements CanActivate {
 
-  constructor( private router: Router) { }
+  constructor( private router: Router, private cookieService: CookieService) { }
   canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
-    if (localStorage.getItem('currentUser')) {
+    const mrToken = this.cookieService.get('mr-token');
+
+    if (mrToken) {
       // logged in
       return true;
     }
