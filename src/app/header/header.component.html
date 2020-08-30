@@ -30,7 +30,7 @@
 							class="material-icons">person_add</i></button>
 					<button *ngIf="isLoggedIn" (click)="logout()" class="btn btn-primary">logout<i
 							class="material-icons">person_add</i></button>
-					<div class="profile">
+					<div class="profile" [class.active]="activetab === 'Profile'" (click)="getActiveTab('Profile')">
 
 						<span class="tooltext">my account</span>
 
