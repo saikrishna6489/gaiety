@@ -7,7 +7,7 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./bookings.component.css']
 })
 export class BookingsComponent implements OnInit {
-
+  a = 0;
   bookings: any = [];
 
   constructor(private apiService:AuthenticationService) { }
@@ -20,6 +20,20 @@ export class BookingsComponent implements OnInit {
       },
       error => console.log(error)
     );
+  }
+  today = new Date()
+
+
+  year = this.today.getFullYear()
+  month = this.today.getMonth()
+  day = this.today.getDate()
+
+  finalDate = `${this.year}-${this.month}-${this.day}`
+
+
+  abc = '2012-11-04';
+  enter(raes) {
+    return Date.parse(this.finalDate) < Date.parse(raes);
   }
 
 }

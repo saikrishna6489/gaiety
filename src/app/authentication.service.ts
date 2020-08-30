@@ -73,8 +73,8 @@ export class AuthenticationService {
     return this.httpClient.post(`${this.baseUrl}upapi/booking/`, body, {headers: this.headers});
   }
 
-  registerBooking1(user: number, name: string, email: string, mobile_number: string, place_of_interest: string, journey_date: string, childs: string, adults: string) {
-    const body = ({user, name, email, mobile_number, place_of_interest, journey_date, childs, adults});
+  registerBooking1(user: number, name: string, email: string, mobile_number: string, place_of_interest: string, journey_date: string, childs: string, adults: string, accomidation: string, special_instructions: string) {
+    const body = ({user, name, email, mobile_number, place_of_interest, journey_date, childs, adults, accomidation, special_instructions});
     return this.httpClient.post(`${this.baseUrl}upapi/booking/`, body, {headers: this.getAuthHeaders()});
   }
 

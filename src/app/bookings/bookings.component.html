@@ -6,7 +6,7 @@
                 <table class="tg">
                 <thead>
                   <tr>
-                    <th class="tg-0lax">s.no<br></th>
+                    <th class="tg-0lax">booking id<br></th>
                     <th class="tg-0lax">name<br></th>
                     <th class="tg-0lax">place</th>
                     <th class="tg-0lax">journey date</th>
@@ -15,9 +15,10 @@
                     <th class="tg-0lax">details</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr *ngFor="let booking of bookings">
-                    <td class="tg-0lax">{{ booking.id }}</td>
+                <tbody *ngFor="let booking of bookings">
+                  
+                  <tr *ngIf="enter(booking.journey_date)">
+                    <td class="tg-0lax">{{ booking.id + 102460 }}</td>
                     <td class="tg-0lax">{{ booking.name }}</td>
                     <td class="tg-0lax">{{ booking.place_of_interest }}</td>
                     <td class="tg-0lax">{{ booking.journey_date }}</td>
@@ -25,6 +26,7 @@
                     <td class="tg-0lax">{{ booking.accomidation }}</td>
                     <td class="tg-0lax"><p>ph.no: {{ booking.mobile_number }}</p><p>email: {{ booking.email }}</p><p>instructions: {{ booking.special_instructions }}</p></td>
                   </tr>
+                  
                 </tbody>
                 </table>
         </div>

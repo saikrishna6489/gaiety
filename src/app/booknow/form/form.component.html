@@ -76,7 +76,7 @@
 
                 <div class="accom">
                     <label>Accombidation:</label>
-                    <select class="form-control" >
+                    <select class="form-control" formControlName="accomidation">
                         <option>Required</option>
                         <option>No Thanks</option>
 
@@ -86,7 +86,7 @@
 
                 <div class="message">
                     <label>Special Instructions:</label>
-                    <textarea name="message" class="form-control"></textarea>
+                    <textarea name="message" class="form-control" formControlName="special_instructions"></textarea>
                 </div>
 
                 <input type="submit" class="btn btn-success" [disabled]="!Packageform.valid">

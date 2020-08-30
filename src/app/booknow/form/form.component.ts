@@ -36,6 +36,8 @@ export class FormComponent implements OnInit {
       journey_date:[null, Validators.required],
       childs:[null, Validators.required],
       adults:[null, Validators.required],
+      accomidation:[null, Validators.required],
+      special_instructions:[null, Validators.required],
 
     });
   }
@@ -59,7 +61,7 @@ saveForm() {
   this.apiService.registerBooking1(this.users[0].user,
     this.Packageform.value.name, this.Packageform.value.email, this.Packageform.value.mobile_number, 
     this.Packageform.value.place_of_interest, this.Packageform.value.journey_date, this.Packageform.value.childs, 
-    this.Packageform.value.adults).subscribe(
+    this.Packageform.value.adults, this.Packageform.value.accomidation, this.Packageform.value.special_instructions).subscribe(
     result => {
       this.router.navigate(['/Myaccount/Bookings']);
     },
