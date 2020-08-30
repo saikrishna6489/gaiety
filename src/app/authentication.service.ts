@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class AuthenticationService {
 
   constructor(
     private httpClient: HttpClient,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private router: Router,
   ) { }
 
   getProfile() {
@@ -75,7 +77,14 @@ export class AuthenticationService {
     const body = ({user, name, email, mobile_number, place_of_interest, journey_date, childs, adults});
     return this.httpClient.post(`${this.baseUrl}upapi/booking/`, body, {headers: this.getAuthHeaders()});
   }
-  
+
+  isloggedIn() {
+    if (this.cookieService.get('mr-token')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   getAuthHeaders() {
     const token = this.cookieService.get('mr-token');
@@ -84,7 +93,14 @@ export class AuthenticationService {
       Authorization: `Token ${token}`
     });
   }
-
+  logout() {
+    const token = this.cookieService.get('mr-token');
+    if (token) {
+      this.cookieService.delete('mr-token');
+      this.router.navigate(['/Login']);
+      this.isloggedIn();
+    }
+  }
 
 
 }

@@ -61,7 +61,7 @@ saveForm() {
     this.Packageform.value.place_of_interest, this.Packageform.value.journey_date, this.Packageform.value.childs, 
     this.Packageform.value.adults).subscribe(
     result => {
-      this.router.navigate(['/Myaccount/Profile']);
+      this.router.navigate(['/Myaccount/Bookings']);
     },
     error => console.log(error)
   );

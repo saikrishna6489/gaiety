@@ -1,4 +1,7 @@
-import { Component, OnInit,HostListener } from '@angular/core';
+import { Component, OnInit,HostListener,AfterContentChecked } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthenticationService } from '../authentication.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +11,14 @@ import { Component, OnInit,HostListener } from '@angular/core';
 export class HeaderComponent implements OnInit {
   
   activetab = "Home";
+  isLoggedIn: boolean;
   
-  constructor() { }
+  constructor(
+    private cookieService: CookieService,
+    private auth: AuthenticationService,) { }
 
   ngOnInit(): void {
+    this.isLoggedIn = this.auth.isloggedIn();
   }
   head_variable=false;
   @HostListener("document:scroll")
@@ -24,7 +31,20 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  ngAfterContentChecked() {
+    of(this.auth.isloggedIn()).subscribe(
+      () => {
+        this.isLoggedIn = this.auth.isloggedIn();
+      }
+    );
+
+  }
+
   getActiveTab(tabname:string){
     this.activetab = tabname;
   }
+  logout() {
+    this.auth.logout();
+  }
+
 }

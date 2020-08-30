@@ -26,7 +26,9 @@
 							[class.active]="activetab === 'Contact'" class="nav-link">Contact</a></li>
 					<li><a routerLink='/Booknow' (click)="getActiveTab('Booknow')"
 							[class.active]="activetab === 'Booknow'" class="nav-link">Booknow</a></li>
-					<button routerLink='/Login' class="btn btn-primary">login<i
+					<button *ngIf="!isLoggedIn" routerLink='/Login' class="btn btn-primary">login<i
+							class="material-icons">person_add</i></button>
+					<button *ngIf="isLoggedIn" (click)="logout()" class="btn btn-primary">logout<i
 							class="material-icons">person_add</i></button>
 					<div class="profile">
 

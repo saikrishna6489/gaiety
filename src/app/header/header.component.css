@@ -104,6 +104,7 @@ h1 span:nth-child(8){
 
 .navsec ul{
 	margin-top: 20px;
+	padding-left: 0px;
 }
 .navsec ul li{
 	list-style: none;
